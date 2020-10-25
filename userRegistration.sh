@@ -1,16 +1,15 @@
 #! /bin/bash
 #Author:Pratibha Mastud
-#User Registration and validation using regex
-#3.Enter valid Email Address in these format abc.xyz@bl.co.in 
+#5.Enter Pre-defined Password Rule No.1-Minimum 8 character
 shopt -s extglob
-
-regex="^[a-z+.]*[a-z]+@[a-z]+[.a-z]{2,}$"
-
-read -p "Enter Valid Email - " email
-
-if [[ $email =~ $regex ]]
+#pattern
+regex="^[a-z]{8,}$"
+#user input
+read -p "Enter Valid Pass - " pass
+#check pass invalid or not
+if [[ $pass =~ $regex ]]
 then
-        echo "Valid email"
+        echo "Valid pass"
 else
-        echo "Invalid email"
+        echo "Invalid pass"
 fi
