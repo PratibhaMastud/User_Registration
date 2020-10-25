@@ -1,16 +1,16 @@
 #! /bin/bash
 #Author:Pratibha Mastud
 #User Registration and validation using regex
-#1.Enter valid First Name Should start with cap and has minimum 3 char.
+#3.Enter valid Email Address in these format abc.xyz@bl.co.in 
 shopt -s extglob
 
-regex="^[A-Z]{1}[a-z]{2,}"
+regex="^[a-z+.]*[a-z]+@[a-z]+[.a-z]{2,}$"
 
-read -p "Enter a first name - " name
+read -p "Enter Valid Email - " email
 
-if [[ $name =~ $regex ]];
+if [[ $email =~ $regex ]]
 then
-	echo "Valid Name"
+        echo "Valid email"
 else
-	echo "Invalid Name"
+        echo "Invalid email"
 fi
