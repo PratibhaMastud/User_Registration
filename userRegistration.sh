@@ -1,17 +1,19 @@
 #! /bin/bash
 #Author:Pratibha Mastud
 #User Registration and validation using regex
-#1.Enter valid Last Name Should start with cap and has minimum 3 char.
+#4.Enter Pre-defined Mobile format.
 shopt -s extglob
+#abc.xyz@bl.co.in
 
-regex="^[A-Z]{1}[a-z]{2,}"
 
-read -p "Enter User Last name - " name
+regex="[1-9]{2}[-][0-9]{10}$"
 
-if [[ $name =~ $regex ]]
+read -p "Enter Mobile Number- " number
+
+if [[ $number =~ $regex ]]
 then
-        echo "Valid Name"
+        echo "Number Save"
 else
-        echo "Invalid Name"
+	echo "Invalid Number please enter number with country code (91-9833080841)"
 fi
 
